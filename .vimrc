@@ -61,17 +61,20 @@ let $PATH='/usr/local/bin:' . $PATH
 let g:session_autoload = 'no'
 
 " Leader Mappings
-map <Leader>w :update<CR>
-map <Leader>q :qall<CR>
-map <Leader>gs :Gstatus<CR>
 map <Leader>gc :Gcommit<CR>
 map <Leader>gp :Gpush<CR>
+map <Leader>gs :Gstatus<CR>
+map <Leader>q :qall<CR>
+map <Leader>rc :e ~/.vimrc<CR>
+map <Leader>rsp :e ~/development/scratchpads/ruby_scratchpad.rb<CR>
+map <Leader>tc :e ~/.tmux.conf<CR>
+map <Leader>w :update<CR>
 
 " RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>t :call RunCurrentSpecFile()<CR>
 
 
 " Toggle nerdtree with F10
@@ -239,12 +242,11 @@ set splitright
 let g:tmux_navigator_no_mappings = 1
 
 " This is a hack due to a neovim bug for going Left
-" Details: https://github.com/christoomey/vim-tmux-navigator#it-doesnt-work-in-neovim-specifically-c-h
-" nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+" https://github.com/christoomey/vim-tmux-navigator#it-doesnt-work-in-neovim-specifically-c-h
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 " configure syntastic syntax checking to check on open as well as save
@@ -322,3 +324,5 @@ command -nargs=0 -bar Update if &modified
                            \|    endif
                            \|endif
 nnoremap <silent> <C-s> :<C-u>Update<CR>
+
+
