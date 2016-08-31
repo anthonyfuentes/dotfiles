@@ -238,6 +238,10 @@ let g:html_indent_tags = 'li\|p'
 set splitbelow
 set splitright
 
+" Quicker buffer movement
+map <C-r> :bp<CR>
+map <C-e> :bn<CR>
+
 " Quicker window movement. Seemlessly navigate between Vim/Tmux panes
 let g:tmux_navigator_no_mappings = 1
 
@@ -285,8 +289,6 @@ command! AC :call <SID>CreateRelated()
 " enable pathogen
 execute pathogen#infect()
 
-" enable solarized colorscheme
-
 "folding settings
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
@@ -310,6 +312,7 @@ map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 " Source main session
 map <F3> :source ~/development/active.vim<CR>
 
+"
 map q: <Nop>
 nnoremap Q <nop>
 
