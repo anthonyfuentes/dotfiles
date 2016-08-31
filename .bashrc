@@ -90,6 +90,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias o='xdg-open'
 alias r='reset'
+alias lines='wc -l'
 #git aliases
 alias gpom='git push origin master'
 alias guom='git pull origin master'
@@ -160,4 +161,12 @@ export EDITOR=vim
 # source tmuxinator for bash
 source ~/.bin/tmuxinator.bash
 
+# Enable <C-s> saving in vim
+vim()
+{
+  local STTYOPTS="$(stty --save)"
+  stty stop '' -ixoff
+  command vim "$@"
+  stty "$STTYOPTS"
+}
 

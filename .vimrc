@@ -310,3 +310,15 @@ map <F3> :source ~/development/active.vim<CR>
 
 map q: <Nop>
 nnoremap Q <nop>
+
+" If the current buffer has never been saved, it will have no name,
+" call the file browser to save it, otherwise just save it.
+" enable <C-s> saving in vim
+command -nargs=0 -bar Update if &modified
+                           \|    if empty(bufname('%'))
+                           \|        browse confirm write
+                           \|    else
+                           \|        confirm write
+                           \|    endif
+                           \|endif
+nnoremap <silent> <C-s> :<C-u>Update<CR>
