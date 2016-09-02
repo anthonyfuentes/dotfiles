@@ -67,6 +67,7 @@ map <Leader>gc  :Gcommit<CR>
 map <Leader>gp  :Gpush<CR>
 map <Leader>gs  :Gstatus<CR>
 map <Leader>h   :noh<CR>
+map <Leader>ls  :ls<CR>
 map <Leader>q   :qall<CR>
 map <Leader>rc  :e ~/.vimrc<CR>
 map <Leader>rsp :e ~/development/scratchpads/ruby_scratchpad.rb<CR>
@@ -76,7 +77,7 @@ map <Leader>-   :bp<CR>
 map <Leader>=   :bn<CR>
 
 " RSpec.vim mappings
-map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>a :call RunAlSpecs()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>t :call RunCurrentSpecFile()<CR>
