@@ -61,14 +61,19 @@ let $PATH='/usr/local/bin:' . $PATH
 let g:session_autoload = 'no'
 
 " Leader Mappings
-map <Leader>gc :Gcommit<CR>
-map <Leader>gp :Gpush<CR>
-map <Leader>gs :Gstatus<CR>
-map <Leader>q :qall<CR>
-map <Leader>rc :e ~/.vimrc<CR>
+map <Leader>bk  :e ~/development/readings/bookmark.txt<CR>
+map <Leader>brc :e ~/.bashrc<CR>
+map <Leader>gc  :Gcommit<CR>
+map <Leader>gp  :Gpush<CR>
+map <Leader>gs  :Gstatus<CR>
+map <Leader>h   :noh<CR>
+map <Leader>q   :qall<CR>
+map <Leader>rc  :e ~/.vimrc<CR>
 map <Leader>rsp :e ~/development/scratchpads/ruby_scratchpad.rb<CR>
-map <Leader>tc :e ~/.tmux.conf<CR>
-map <Leader>w :update<CR>
+map <Leader>tc  :e ~/.tmux.conf<CR>
+map <Leader>w   :update<CR>
+map <Leader>-   :bp<CR>
+map <Leader>=   :bn<CR>
 
 " RSpec.vim mappings
 map <Leader>a :call RunAllSpecs()<CR>
@@ -239,8 +244,6 @@ set splitbelow
 set splitright
 
 " Quicker buffer movement
-map <C-r> :bp<CR>
-map <C-e> :bn<CR>
 
 " Quicker window movement. Seemlessly navigate between Vim/Tmux panes
 let g:tmux_navigator_no_mappings = 1
