@@ -90,7 +90,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias o='xdg-open'
 alias r='reset'
-alias lines='wc -l'
+# wc = word count; -l = lines only; * = all files; | pipe into sort; sort -n = sort numerically
+alias lines='wc -l * | sort -n'
 #git aliases
 alias gpom='git push origin master'
 alias guom='git pull origin master'
