@@ -332,4 +332,3 @@ command -nargs=0 -bar Update if &modified
                            \|endif
 nnoremap <silent> <C-s> :<C-u>Update<CR>
 
-
