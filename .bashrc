@@ -143,11 +143,6 @@ function parse_git_branch () {
 
 PS1="[$NO_COLOR\W]$GREEN\$(parse_git_branch)$NO_COLOR\$ "
 
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-
 # BREW
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
