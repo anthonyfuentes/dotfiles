@@ -85,6 +85,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # system aliases
+alias dev='cd ~/development'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
