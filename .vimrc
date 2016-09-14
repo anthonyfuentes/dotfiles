@@ -59,6 +59,7 @@ map <Leader>gp  :Gpush<CR>
 map <Leader>gs  :Gstatus<CR>
 map <Leader>h   :noh<CR>
 map <Leader>ls  :ls<CR>
+map <Leader>ob  :Obsess<CR>
 map <Leader>qa  :qall<CR>
 map <Leader>rc  :e ~/.vimrc<CR>
 map <Leader>rsp :e ~/development/scratchpads/ruby_scratchpad.rb<CR>
