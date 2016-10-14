@@ -99,10 +99,10 @@ alias gpom='git push origin master'
 alias config='/usr/bin/git --git-dir=/home/nab/.cfg/ --work-tree=/home/nab'
 #python aliases
 alias server='python -m SimpleHTTPServer'
-# ruby/ rake aliases
-alias be='bundle exec'
 # tmux aliases
 alias tko='tmux kill-session -t'
+# reek aliases
+alias reek='reek --no-wiki-links'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
