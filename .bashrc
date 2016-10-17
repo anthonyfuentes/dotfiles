@@ -150,7 +150,7 @@ export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 # Solarized dircolors
-eval `dircolors ~/.dir_colors`
+eval `dircolors ~/.dir_colors/dircolors`
 
 # set editor
 export EDITOR=vim
