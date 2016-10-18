@@ -132,7 +132,6 @@ fi
 export PATH="/usr/local/heroku/bin:$PATH"
 
 #displays git branch at terminal
-
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -155,9 +154,6 @@ eval `dircolors ~/.dir_colors/dircolors`
 # set editor
 export EDITOR=vim
 
-# source tmuxinator for bash
-source ~/.bin/tmuxinator.bash
-
 # Enable <C-s> saving in vim
 vim()
 {
@@ -166,4 +162,9 @@ vim()
   command vim "$@"
   stty "$STTYOPTS"
 }
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 
