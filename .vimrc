@@ -8,10 +8,14 @@ call vundle#begin()
 
 " plugins
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'kien/ctrlp.vim'
 Plugin 'shougo/neocomplete.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-obsession'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -43,8 +47,6 @@ let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_enable_highlighting=0
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-" Quicker window movement. Seemlessly navigate between Vim/Tmux panes
-let g:tmux_navigator_no_mappings = 1
 
 :au FocusLost * :wa "Save on focus lost
 
@@ -68,13 +70,6 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
-" This is a hack due to a neovim bug for going Left
-" https://github.com/christoomey/vim-tmux-navigator#it-doesnt-work-in-neovim-specifically-c-h
-nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 " bind K to search word under cursor
 nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 
@@ -264,4 +259,10 @@ set foldlevel=1         "this is just what i use
 " Added
 map q: <Nop>
 nnoremap Q <nop>
+
+" faster split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
