@@ -50,7 +50,7 @@ let g:tmux_navigator_no_mappings = 1
 :au FocusLost * :wa "Save on focus lost
 
 " Leader Mappings
-map <Leader>bk  :e ~/development/readings/bookmark.txt<CR>
+map <Leader>bk  :e ~/development/study_materials/readings/bookmark.txt<CR>
 map <Leader>brc :e ~/.bashrc<CR>
 map <Leader>gc  :Gcommit<CR>
 map <Leader>gp  :Gpush<CR>
@@ -60,7 +60,7 @@ map <Leader>ls  :ls<CR>
 map <Leader>ob  :Obsess<CR>
 map <Leader>qa  :qall<CR>
 map <Leader>rc  :e ~/.vimrc<CR>
-map <Leader>rsp :e ~/development/scratchpads/ruby_scratchpad.rb<CR>
+map <Leader>rsp :e ~/development/code/scratchpads/ruby_scratchpad.rb<CR>
 map <Leader>tc  :e ~/.tmux.conf<CR>
 map <Leader>w   :update<CR>
 map <Leader>-   :bp<CR>
