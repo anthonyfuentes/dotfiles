@@ -9,10 +9,9 @@ call vundle#begin()
 " plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'shougo/neocomplete.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -50,30 +49,19 @@ let g:tmux_navigator_no_mappings = 1
 :au FocusLost * :wa "Save on focus lost
 
 " Leader Mappings
-map <Leader>bk  :e ~/development/study_materials/readings/bookmark.txt<CR>
-map <Leader>brc :e ~/.bashrc<CR>
-map <Leader>gc  :Gcommit<CR>
-map <Leader>gp  :Gpush<CR>
-map <Leader>gs  :Gstatus<CR>
-map <Leader>h   :noh<CR>
-map <Leader>ls  :ls<CR>
-map <Leader>ob  :Obsess<CR>
-map <Leader>qa  :qall<CR>
-map <Leader>rc  :e ~/.vimrc<CR>
-map <Leader>rsp :e ~/development/code/scratchpads/ruby_scratchpad.rb<CR>
-map <Leader>tc  :e ~/.tmux.conf<CR>
-map <Leader>w   :update<CR>
 map <Leader>-   :bp<CR>
 map <Leader>=   :bn<CR>
 map <Leader>]   :vertical resize -5<CR>
 map <Leader>[   :vertical resize +5<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>bk  :e ~/development/study_materials/readings/bookmark.txt<CR>
+map <Leader>brc :e ~/.bashrc<CR>
+map <Leader>h   :noh<CR>
+map <Leader>ob  :Obsess<CR>
+map <Leader>q   :bp<bar>sp<bar>bn<bar>bd<CR>
+map <Leader>rc  :e ~/.vimrc<CR>
+map <Leader>rsp :e ~/development/code/scratchpads/ruby_scratchpad.rb<CR>
+map <Leader>w   :update<CR>
 " key mappings
-map <F2> :set paste<CR>i
-map <F3> :source ~/development/active.vim<CR>
-map <F5> :g/^\s*$/d<CR>
 map <F9> :NERDTreeFind<CR>
 map <F10> :NERDTreeToggle<CR>
 nnoremap <Left> :echoe "Use h"<CR>
@@ -105,7 +93,7 @@ set laststatus=2  " Always display the status line
 set list listchars=tab:»·,trail:·
 set modelines=0
 set nobackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set noswapfile
 set notimeout
 set nowritebackup
 set relativenumber
@@ -274,18 +262,6 @@ set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
 " Added
-set modelines=0
-set encoding=utf-8
-set scrolloff=3
-set autoindent
-set showmode
-set hidden
-set wildmenu
-set visualbell
-set backspace=indent,eol,start
-set relativenumber
-map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 map q: <Nop>
 nnoremap Q <nop>
 
-let g:neocomplete#enable_at_startup = 1
