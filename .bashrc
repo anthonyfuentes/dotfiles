@@ -91,7 +91,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias o='xdg-open'
 alias r='reset'
-alias rsp='ruby ~/development/scratchpads/ruby_scratchpad.rb'
+alias rsp='ruby ~/development/code/scratchpads/ruby_scratchpad.rb'
 # wc = word count; -l = lines only; * = all files; | pipe into sort; sort -n = sort numerically
 alias lines='wc -l * | sort -n'
 #git aliases
