@@ -9,13 +9,18 @@ call vundle#begin()
 " plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
+Plugin 'chun-yang/auto-pairs'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
 Plugin 'shougo/neocomplete.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-obsession'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-ruby/vim-ruby'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -106,6 +111,7 @@ set wildmenu
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set softtabstop=2
 " Numbers
 set number
 set numberwidth=5
@@ -237,9 +243,6 @@ function! s:Open(file)
 endfunction
 
 command! AC :call <SID>CreateRelated()
-
-" enable pathogen
-execute pathogen#infect()
 
 " enable <C-s> saving
 command -nargs=0 -bar Update if &modified
