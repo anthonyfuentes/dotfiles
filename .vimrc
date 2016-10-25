@@ -25,7 +25,6 @@ Plugin 'vim-ruby/vim-ruby'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins
 " :PluginUpdate     - update plugins
@@ -41,21 +40,16 @@ set lazyredraw
 
 let $PATH='/usr/local/bin:' . $PATH
 let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
-" Treat <li> and <p> tags like the block tags they are
+" treat <li> and <p> tags like block tags
 let g:html_indent_tags = 'li\|p'
 let g:jsx_ext_required = 0
 let g:neocomplete#enable_at_startup = 1
-let g:ruby_path="~/.rvm/bin/ruby"
 let g:session_autoload = 'no'
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_enable_highlighting=0
-" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
-:au FocusLost * :wa "Save on focus lost
-
-" Leader Mappings
+" leader mappings
 map <Leader>-   :bp<CR>
 map <Leader>=   :bn<CR>
 map <Leader>]   :vertical resize -5<CR>
@@ -68,15 +62,21 @@ map <Leader>q   :bp<bar>sp<bar>bn<bar>bd<CR>
 map <Leader>rc  :e ~/.vimrc<CR>
 map <Leader>rsp :e ~/development/code/scratchpads/ruby_scratchpad.rb<CR>
 map <Leader>w   :update<CR>
-" key mappings
+
+" other mappings
+map q: <Nop>
 map <F9> :NERDTreeFind<CR>
 map <F10> :NERDTreeToggle<CR>
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
-" bind K to search word under cursor
-nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap Q <nop>
+" faster split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " general settings
 set autoindent
@@ -85,6 +85,7 @@ set backspace=2   " Backspace deletes like most programs in insert mode
 set backspace=indent,eol,start
 set encoding=utf-8
 set foldmethod=manual
+set nofoldenable  "dont fold by default
 set hidden
 set history=500
 set hlsearch      " highlight matches
@@ -140,8 +141,6 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
-filetype plugin indent on
-
 augroup vimrcEx
   autocmd!
 
@@ -166,25 +165,6 @@ augroup vimrcEx
   " Automatically wrap at 80 characters for Markdown
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
-
-let g:rspec_command = 'call Send_to_Tmux("NO_RENDERER=true bundle exec rspec {spec}\n")'
-" Mocha command is specific to Product Hunt setup. Probably doesn't work with
-" other apps
-let g:mocha_js_command = 'call Send_to_Tmux("$(npm bin)/mocha --opts spec/javascripts/mocha.opts {spec}\n")'
-let g:rspec_runner = "os_x_iterm"
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup
-  let g:grep_cmd_opts = '--line-numbers --noheading'
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -232,18 +212,6 @@ endfunction
 
 au BufWritePre * :call <SID>RemoveTrailingWhitespaces()
 
-" Create related file (Rails Spec file if missing). :AC
-function! s:CreateRelated()
-  let related = rails#buffer().alternate_candidates()[0]
-  call s:Open(related)
-endfunction
-
-function! s:Open(file)
-  exec('vsplit ' . a:file)
-endfunction
-
-command! AC :call <SID>CreateRelated()
-
 " enable <C-s> saving
 command -nargs=0 -bar Update if &modified
                            \|    if empty(bufname('%'))
@@ -251,21 +219,6 @@ command -nargs=0 -bar Update if &modified
                            \|    else
                            \|        confirm write
                            \|    endif
-                           \|endif
+                           \|end
 nnoremap <silent> <C-s> :<C-u>Update<CR>
-
-"folding settings
-set foldmethod=manual   "fold based on selection
-set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use
-
-" Added
-map q: <Nop>
-nnoremap Q <nop>
-
-" faster split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
