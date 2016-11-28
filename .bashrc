@@ -40,29 +40,6 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-  # We have color support; assume it's compliant with Ecma-48
-  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-  # a case would tend to support setf rather than setaf.)
-  color_prompt=yes
-    else
-  color_prompt=
-    fi
-fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1='$[\033[01;34m\]\W\[\033[00m\]\$ '
-else
-    PS1='$u@\h:\W\$ '
-fi
-unset color_prompt force_color_prompt
-
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -92,17 +69,19 @@ alias l='ls -CF'
 alias o='xdg-open'
 alias r='reset'
 alias rsp='ruby ~/development/code/scratchpads/ruby_scratchpad.rb'
+
 # wc = word count; -l = lines only; * = all files; | pipe into sort; sort -n = sort numerically
 alias lines='wc -l * | sort -n'
+
 #git aliases
 alias gpom='git push origin master'
 alias config='/usr/bin/git --git-dir=/home/nab/.cfg/ --work-tree=/home/nab'
+
 #python aliases
 alias server='python -m SimpleHTTPServer'
+
 # tmux aliases
 alias tko='tmux kill-session -t'
-# reek aliases
-alias reek='reek --no-wiki-links'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -136,17 +115,7 @@ function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-#RED="\[\033[0;31m\]"
-#YELLOW="\[\033[0;33m\]"
-#GREEN="\[\033[0;32m\]"
-#NO_COLOR="\[\033[0m\]"
-
 PS1="[$NO_COLOR\W]$GREEN\$(parse_git_branch)$NO_COLOR\$ "
-
-# BREW
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 # Solarized dircolors
 eval `dircolors ~/.dir_colors/dircolors`
