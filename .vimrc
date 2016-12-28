@@ -61,6 +61,7 @@ map <Leader>ob  :Obsess<CR>
 map <Leader>q   :bp<bar>sp<bar>bn<bar>bd<CR>
 map <Leader>rc  :e ~/.vimrc<CR>
 map <Leader>rsp :e ~/development/code/scratchpads/ruby_scratchpad.rb<CR>
+map <Leader>jsp :e ~/development/code/scratchpads/js-scratchpad.js<CR>
 map <Leader>w   :update<CR>
 
 " other mappings
