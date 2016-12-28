@@ -5,6 +5,7 @@
 [alias]
   aa = add --all
   ap = add --patch
+  c  = commit
   ca = commit --amend
   co = checkout
 [core]
