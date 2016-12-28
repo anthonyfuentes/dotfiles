@@ -137,4 +137,7 @@ vim()
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# user-specific
+export PATH="$PATH:$HOME/.bin"
+
 
