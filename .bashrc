@@ -80,7 +80,7 @@ alias config='/usr/bin/git --git-dir=/home/nab/.cfg/ --work-tree=/home/nab'
 alias gpom='git push origin master'
 
 #python aliases
-alias server='python -m SimpleHTTPServer'
+alias pserve='python -m SimpleHTTPServer'
 
 # tmux aliases
 alias tko='tmux kill-session -t'
