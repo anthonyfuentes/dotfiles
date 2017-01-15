@@ -8,6 +8,7 @@
   c  = commit
   ca = commit --amend
   co = checkout
+  l  = log
   s  = status
 [core]
   excludesfile = ~/.gitignore
