@@ -53,8 +53,6 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -75,12 +73,15 @@ alias jsp='js ~/development/code/scratchpads/js-scratchpad.js'
 # wc = word count; -l = lines only; * = all files; | pipe into sort; sort -n = sort numerically
 alias lines='wc -l * | sort -n'
 
-#git aliases
+# git aliases
 alias config='/usr/bin/git --git-dir=/home/nab/.cfg/ --work-tree=/home/nab'
 alias gpom='git push origin master'
 
-#python aliases
+# python aliases
 alias pserve='python -m SimpleHTTPServer'
+
+#ruby aliases
+alias rserve='ruby -run -e httpd . -p 3001'
 
 # tmux aliases
 alias tko='tmux kill-session -t'
