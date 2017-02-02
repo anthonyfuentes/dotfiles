@@ -13,6 +13,7 @@ Plugin 'chun-yang/auto-pairs'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'mxw/vim-jsx'
 Plugin 'shougo/neocomplete.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -54,6 +55,7 @@ map <Leader>-   :bp<CR>
 map <Leader>=   :bn<CR>
 map <Leader>]   :vertical resize -5<CR>
 map <Leader>[   :vertical resize +5<CR>
+map <Leader>"   :%s/"/'/g<CR>
 map <Leader>bk  :e ~/development/study_materials/readings/bookmark.txt<CR>
 map <Leader>brc :e ~/.bashrc<CR>
 map <Leader>h   :noh<CR>
@@ -62,7 +64,6 @@ map <Leader>q   :bp<bar>sp<bar>bn<bar>bd<CR>
 map <Leader>rc  :e ~/.vimrc<CR>
 map <Leader>rsp :e ~/development/code/scratchpads/ruby_scratchpad.rb<CR>
 map <Leader>jsp :e ~/development/code/scratchpads/js-scratchpad.js<CR>
-map <Leader>w   :update<CR>
 
 " other mappings
 map q: <Nop>
