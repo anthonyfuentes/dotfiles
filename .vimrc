@@ -18,6 +18,7 @@ Plugin 'shougo/neocomplete.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-surround'
@@ -55,7 +56,8 @@ map <Leader>-   :bp<CR>
 map <Leader>=   :bn<CR>
 map <Leader>]   :vertical resize -5<CR>
 map <Leader>[   :vertical resize +5<CR>
-map <Leader>"   :%s/"/'/g<CR>
+map <Leader>'   :%s/"/'/g<CR>
+map <Leader>"   :%s/'/"/g<CR>
 map <Leader>bk  :e ~/development/study_materials/readings/bookmark.txt<CR>
 map <Leader>brc :e ~/.bashrc<CR>
 map <Leader>h   :noh<CR>
@@ -129,7 +131,7 @@ au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline
 set cursorline
 
-"key to insert mode with paste using F2 key
+" key to insert mode with paste using F2 key
 " Leave paste mode on exit
 au InsertLeave * set nopaste
 
@@ -215,7 +217,7 @@ endfunction
 au BufWritePre * :call <SID>RemoveTrailingWhitespaces()
 
 " enable <C-s> saving
-command -nargs=0 -bar Update if &modified
+command! -nargs=0 -bar Update if &modified
                            \|    if empty(bufname('%'))
                            \|        browse confirm write
                            \|    else
@@ -223,4 +225,5 @@ command -nargs=0 -bar Update if &modified
                            \|    endif
                            \|end
 nnoremap <silent> <C-s> :<C-u>Update<CR>
+
 
