@@ -76,6 +76,7 @@ alias lines='wc -l * | sort -n'
 # git aliases
 alias config='/usr/bin/git --git-dir=/home/nab/.cfg/ --work-tree=/home/nab'
 alias gpom='git push origin master'
+alias gpod='git push origin dev'
 
 # python aliases
 alias pserve='python -m SimpleHTTPServer'
@@ -84,6 +85,7 @@ alias pserve='python -m SimpleHTTPServer'
 alias rserve='ruby -run -e httpd . -p 3001'
 
 # tmux aliases
+alias tmuxi='tmuxinator'
 alias tko='tmux kill-session -t'
 
 # Add an "alert" alias for long running commands.  Use like so:
