@@ -77,6 +77,7 @@ alias lines='wc -l * | sort -n'
 alias config='/usr/bin/git --git-dir=/home/nab/.cfg/ --work-tree=/home/nab'
 alias gpom='git push origin master'
 alias gpod='git push origin dev'
+alias gpud='git pull origin dev'
 
 # python aliases
 alias pserve='python -m SimpleHTTPServer'
@@ -145,3 +146,6 @@ eval "$(rbenv init -)"
 export PATH="$PATH:$HOME/.bin"
 
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
