@@ -165,6 +165,7 @@ set cursorline
 "set internal variables
 "***********************
 let g:neocomplete#enable_at_startup = 1
+let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
 
 "***********************
 "Delete trailing whitespace on save
