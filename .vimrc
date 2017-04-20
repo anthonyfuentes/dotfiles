@@ -113,6 +113,9 @@ set shell=/bin/bash
 set showmode
 set splitbelow
 set splitright
+set textwidth=78
+set ttimeout
+set ttimeoutlen=20
 set ttyfast
 set visualbell
 set wildmenu
@@ -181,3 +184,8 @@ function! s:RemoveTrailingWhitespaces()
 endfunction
 
 au BufWritePre * :call <SID>RemoveTrailingWhitespaces()
+
+"***********************
+"Ensure formatoptions are set for line wrapping purposes
+"***********************
+autocmd BufNewFile,BufRead * setlocal formatoptions+=croqlt
