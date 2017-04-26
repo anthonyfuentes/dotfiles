@@ -80,11 +80,18 @@ alias glom='git pull origin master'
 alias gsod='git push origin dev'
 alias glod='git pull origin dev'
 
+# php aliases
+function phpserve() {
+  php -S "localhost:$1"
+}
+
 # python aliases
-alias pserve='python -m SimpleHTTPServer'
+alias pyserve='python -m SimpleHTTPServer'
 
 #ruby aliases
-alias rserve='ruby -run -e httpd . -p 3001'
+function rserve() {
+  ruby -run -e httpd . -p "$1"
+}
 
 # tmux aliases
 alias tmuxi='tmuxinator'
