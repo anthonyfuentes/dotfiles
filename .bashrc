@@ -74,7 +74,7 @@ alias jsp='node ~/development/code/scratchpads/js-scratchpad.js'
 alias lines='wc -l * | sort -n'
 
 # git aliases
-alias config='/usr/bin/git --git-dir=/home/nab/.cfg/ --work-tree=/home/nab'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias gsom='git push origin master'
 alias glom='git pull origin master'
 alias gsod='git push origin dev'
@@ -157,3 +157,4 @@ export PATH="$PATH:$HOME/.bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
