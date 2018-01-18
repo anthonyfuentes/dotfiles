@@ -121,30 +121,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 #displays git branch at terminal
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-PS1="[$NO_COLOR\W]$GREEN\$(parse_git_branch)$NO_COLOR\$ "
-
-# Solarized dircolors
-eval `dircolors ~/.dir_colors/dircolors`
+PS1="$USER\$(parse_git_branch) /$NO_COLOR\W$GREEN\$NO_COLOR \$ "
 
 # set editor
 export EDITOR=vim
-
-# Enable <C-s> saving in vim
-vim()
-{
-  local STTYOPTS="$(stty --save)"
-  stty stop '' -ixoff
-  command vim "$@"
-  stty "$STTYOPTS"
-}
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -152,9 +137,4 @@ eval "$(rbenv init -)"
 
 # user-specific
 export PATH="$PATH:$HOME/.bin"
-
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
