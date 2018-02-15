@@ -1,7 +1,19 @@
 "***********************
 "Color scheme
 "***********************
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark " or light
 colorscheme solarized
 syntax enable
+
+"***********************
+"Highlight SpecialKeys
+"***********************
+fun! s:highlight()
+  highlight SpecialKey ctermbg=gray guibg=gray
+endfun
+
+augroup specialkey_highlight
+  autocmd!
+  autocmd ColorScheme * call s:highlight()
+augroup end
+
