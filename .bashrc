@@ -1,7 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -22,10 +18,6 @@ HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -59,73 +51,27 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# system aliases
-alias dev='cd ~/development'
-alias l='ls -CF'
-alias la='ls -A'
-alias ll='ls -alF'
-alias mv='mv -i'
-alias o='xdg-open'
-alias r='reset'
-alias rsp='ruby ~/development/code/scratchpads/ruby_scratchpad.rb'
-alias jsp='node ~/development/code/scratchpads/js-scratchpad.js'
-
-# wc = word count; -l = lines only; * = all files; | pipe into sort; sort -n = sort numerically
-alias lines='wc -l * | sort -n'
-
-# git aliases
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias gsom='git push origin master'
-alias glom='git pull origin master'
-alias gsod='git push origin dev'
-alias glod='git pull origin dev'
-
-# php aliases
-function phpserve() {
-  php -S "localhost:$1"
-}
-
-# python aliases
-alias pyserve='python -m SimpleHTTPServer'
-
-#ruby aliases
-function rserve() {
-  ruby -run -e httpd . -p "$1"
-}
-
-# tmux aliases
-alias tmuxi='tmuxinator'
-alias tko='tmux kill-session -t'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
+# Source bash aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+#
+# Source bash functions
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
 fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
 fi
 
 #displays git branch at terminal
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-
 PS1="$USER\$(parse_git_branch) /$NO_COLOR\W$GREEN\$NO_COLOR \$ "
 
 # set editor
@@ -135,6 +81,6 @@ export EDITOR=vim
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# user-specific
+# Export ./bin to PATH
 export PATH="$PATH:$HOME/.bin"
 
