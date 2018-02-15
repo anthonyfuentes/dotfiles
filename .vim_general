@@ -1,0 +1,76 @@
+
+"***********************
+"Faster split navigation
+"***********************
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"***********************
+"HJKL navigation
+"***********************
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+"***********************
+"General settings
+"***********************
+set autoindent
+set autowrite
+set backspace=2
+set complete=.,w,b
+set encoding=utf-8
+set foldmethod=manual
+set hidden
+set history=500
+set hlsearch
+set incsearch
+set lazyredraw
+set list listchars=tab:\-\-,trail:·
+set modelines=0
+set noswapfile
+set number
+set numberwidth=5
+set relativenumber
+set ruler
+set shell=/bin/bash
+set showmode
+set splitbelow
+set splitright
+set textwidth=78
+set ttimeout
+set ttimeoutlen=20
+set ttyfast
+set visualbell
+set wildmenu
+set wildmode=list:longest,full
+
+"***********************
+"Softtabs, 2 spaces
+"***********************
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+
+"***********************
+"Search settings
+"***********************
+set smartcase
+set ignorecase
+
+"***********************
+"Highlight cursor row
+"***********************
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline
+set cursorline
+
+"***********************
+"Ensure formatoptions are set for line wrapping purposes
+"***********************
+autocmd BufNewFile,BufRead * setlocal formatoptions+=croqlt
+

@@ -1,0 +1,59 @@
+set nocompatible
+
+"***********************
+"Vundle
+"***********************
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'chun-yang/auto-pairs'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mattn/emmet-vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
+Plugin 'shougo/neocomplete'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'stanangeloff/php.vim'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-ruby/vim-ruby'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins
+" :PluginUpdate     - update plugins
+" :PluginSearch foo - searches for foo
+" :PluginClean      - confirms removal of unused plugins
+"
+" see :h vundle for more details
+
+" ***********************
+"NERDTree mappings
+" ***********************
+map <F9> :NERDTreeFind<CR>
+map <F10> :NERDTreeToggle<CR>
+
+"***********************
+"Airline settings
+"***********************
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline_theme='solarized'
+set t_Co=256
+set laststatus=2
+
+"***********************
+"Enable neocomplete
+"***********************
+let g:neocomplete#enable_at_startup = 1
+
