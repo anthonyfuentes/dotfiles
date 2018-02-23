@@ -51,16 +51,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# Source bash aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-#
-# Source bash functions
-if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -77,10 +67,20 @@ PS1="$USER\$(parse_git_branch) /$NO_COLOR\W$GREEN\$NO_COLOR \$ "
 # set editor
 export EDITOR=vim
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 # Export ./bin to PATH
 export PATH="$PATH:$HOME/.bin"
 
+# Source bash aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# Source bash functions
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
+
+# Source bash plugins
+if [ -f ~/.bash_plugins ]; then
+    . ~/.bash_plugins
+fi
