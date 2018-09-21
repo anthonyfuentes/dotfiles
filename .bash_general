@@ -5,6 +5,10 @@
 # set editor
 export EDITOR=vim
 
+# set umask
+# default permissionts to directories: 755, files: 644
+umask 022
+
 
 ##################
 # Display settings
