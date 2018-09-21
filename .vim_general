@@ -70,7 +70,7 @@ au WinEnter * set cursorline
 set cursorline
 
 "***********************
-"Ensure formatoptions are set for line wrapping purposes
+"Ensure format options are set for line wrapping purposes
 "***********************
 autocmd BufNewFile,BufRead * setlocal formatoptions+=croqlt
 
