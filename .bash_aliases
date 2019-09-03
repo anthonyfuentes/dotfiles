@@ -1,4 +1,5 @@
 # system aliases
+alias groupsp='groups | sed "s/ /\n    /g"'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
