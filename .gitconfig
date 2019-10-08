@@ -9,6 +9,7 @@
   c  = commit
   ca = commit --amend
   co = checkout
+  cp = cherry-pick
   l  = log
   s  = status
 [core]
