@@ -10,6 +10,12 @@ Version control repo for my configuration files.
 *  [The best way to store your dotfiles](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
 
 ## Quick Setup
+1. git init --bare $HOME/.cfg
+2. alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+3. config config --local status.showUntrackedFiles no
+4. config remote add \<remote\>
+
+## Setup Script
 1. Execute the code found in the [setup_local_configs](https://gist.github.com/anthonyfuentes/17b77f4f313fc1330b27f9d5c9ef409f) script
     1. In order for the .bash_profile to affect the parent shell, execute the script like so `$ . ./<script name> <repo URL>`
     2. To clone a specific branch, execute `$ . ./<script name> <repo URL> <branch name>`
