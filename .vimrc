@@ -5,4 +5,3 @@ source $HOME/.vim_mappings
 
 source $HOME/.vim_color
 source $HOME/.vim_plugins
-

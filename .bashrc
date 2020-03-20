@@ -17,11 +17,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Source bash functions
-if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
-fi
-
 # Source bash plugins
 if [ -f ~/.bash_plugins ]; then
     . ~/.bash_plugins
