@@ -1,4 +1,9 @@
 "***********************
+"Command mappings
+"***********************
+command! -nargs=1 Fc FireplaceConnect <args>
+
+"***********************
 "Leader mappings
 "***********************
 map <Leader>'   :%s/"/'/g<CR>
@@ -7,7 +12,7 @@ map <Leader>-   :bp<CR>
 map <Leader>=   :bn<CR>
 map <Leader>]   :vertical resize -5<CR>
 map <Leader>[   :vertical resize +5<CR>
-map <Leader>h   :noh<CR>
 map <Leader>l   :set list<CR>
+map <Leader>nh  :noh<CR>
 map <Leader>nl  :set nolist<CR>
 map <Leader>q   :bp<bar>sp<bar>bn<bar>bd<CR>
