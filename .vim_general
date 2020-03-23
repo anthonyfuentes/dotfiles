@@ -23,7 +23,8 @@ set autowrite
 set backspace=2
 set complete=.,w,b
 set encoding=utf-8
-set foldmethod=manual
+set foldmethod=indent
+set foldlevel=1
 set hidden
 set history=500
 set hlsearch
