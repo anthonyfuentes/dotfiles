@@ -1,8 +1,6 @@
 "***********************
 "Color scheme
 "***********************
-set background=dark " or light
-colorscheme solarized
 syntax enable
 
 "***********************

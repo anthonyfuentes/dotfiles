@@ -45,7 +45,6 @@ set textwidth=78
 set ttimeout
 set ttimeoutlen=20
 set ttyfast
-set visualbell
 set wildmenu
 set wildmode=list:longest,full
 
