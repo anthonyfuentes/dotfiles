@@ -1,8 +1,9 @@
 # system aliases
+alias cp='cp -i'
 alias groupsp='groups | sed "s/ /\n    /g"'
 alias l='ls -CF'
-alias la='ls -A'
-alias ll='ls -alF'
+alias ll='ls -l'
+alias lla='ls -la'
 alias mv='mv -i'
 alias o='xdg-open'
 alias r='reset'
