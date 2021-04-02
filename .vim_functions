@@ -26,5 +26,5 @@ function! TabToggle()
     set expandtab
   endif
 endfunction
-nmap <F11> mz:execute TabToggle()<CR>'z
+nmap <F12> mz:execute TabToggle()<CR>'z
 

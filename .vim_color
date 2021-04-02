@@ -1,6 +1,7 @@
 "***********************
 "Color scheme
 "***********************
+set background=dark " or light
 syntax enable
 
 "***********************
@@ -14,4 +15,3 @@ augroup specialkey_highlight
   autocmd!
   autocmd ColorScheme * call s:highlight()
 augroup end
-
