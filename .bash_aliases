@@ -1,12 +1,16 @@
 # system aliases
 alias cp='cp -i'
 alias groupsp='groups | sed "s/ /\n    /g"'
-alias l='ls -CF'
-alias ll='ls -l'
-alias lla='ls -la'
+alias ls='ls -G'
+alias l='ls -GCF'
+alias ll='ls -Gl'
+alias lla='ls -Gla'
 alias mv='mv -i'
-alias o='xdg-open'
+alias o='open'
 alias r='reset'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # git aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
