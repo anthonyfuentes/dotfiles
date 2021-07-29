@@ -1,4 +1,3 @@
-
 "***********************
 "Faster split navigation
 "***********************
@@ -7,17 +6,17 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"***********************
+"***************
 "HJKL navigation
-"***********************
+"***************
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-"***********************
+"****************
 "General settings
-"***********************
+"****************
 set autoindent
 set autowrite
 set backspace=2
@@ -48,28 +47,36 @@ set ttyfast
 set wildmenu
 set wildmode=list:longest,full
 
-"***********************
+"******************
 "Softtabs, 2 spaces
-"***********************
+"******************
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
-"***********************
+"***************
 "Search settings
-"***********************
+"***************
 set smartcase
 set ignorecase
 
-"***********************
+"********************
 "Highlight cursor row
-"***********************
+"********************
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline
 set cursorline
 
-"***********************
+"********************************************************
 "Ensure format options are set for line wrapping purposes
-"***********************
+"********************************************************
 autocmd BufNewFile,BufRead * setlocal formatoptions+=croqlt
+
+"**********************************
+"Format Clojure with zprint on save
+"**********************************
+aug VimAutoFormatOnWriting
+  au!
+  au BufWritePre *.clj,*.edn :%!bin/zprintm-1.1.2 '{:search-config? true}'
+aug END
