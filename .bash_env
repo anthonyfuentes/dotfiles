@@ -8,3 +8,8 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# infra cluster
+export VAULT_ADDR=https://vault.edenhealth.com/
+export CONSUL_HTTP_ADDR=https://consul.edenhealth.com
+export NOMAD_ADDR=https://nomad.edenhealth.com
