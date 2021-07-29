@@ -27,3 +27,16 @@ function! TabToggle()
   endif
 endfunction
 nmap <F12> mz:execute TabToggle()<CR>'z
+
+"************************
+"Toggle Zprint Formatting
+"************************
+function! ToggleZprint()
+  if g:formatwithzprint
+    let g:formatwithzprint=0
+    echo "Zprint formatting OFF"
+  else
+    let g:formatwithzprint=1
+    echo "Zprint formatting ON"
+  endif
+endfunction

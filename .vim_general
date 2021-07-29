@@ -76,7 +76,12 @@ autocmd BufNewFile,BufRead * setlocal formatoptions+=croqlt
 "**********************************
 "Format Clojure with zprint on save
 "**********************************
-aug VimAutoFormatOnWriting
-  au!
-  au BufWritePre *.clj,*.edn :%!bin/zprintm-1.1.2 '{:search-config? true}'
-aug END
+let g:formatwithzprint=0
+
+if g:formatwithzprint
+  echo "formatting now!"
+  aug VimAutoFormatOnWriting
+    au!
+    au BufWritePre *.clj,*.edn :%!bin/zprintm-1.1.2 '{:search-config? true}'
+  aug END
+endif

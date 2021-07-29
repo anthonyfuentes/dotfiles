@@ -16,3 +16,4 @@ map <Leader>l   :set list<CR>
 map <Leader>nh  :noh<CR>
 map <Leader>nl  :set nolist<CR>
 map <Leader>q   :bp<bar>sp<bar>bn<bar>bd<CR>
+map <Leader>z   :execute ToggleZprint()<CR>'z
