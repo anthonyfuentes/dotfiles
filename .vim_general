@@ -73,15 +73,13 @@ set cursorline
 "********************************************************
 autocmd BufNewFile,BufRead * setlocal formatoptions+=croqlt
 
-"**********************************
-"Format Clojure with zprint on save
-"**********************************
-let g:formatwithzprint=0
-
-if g:formatwithzprint
-  echo "formatting now!"
-  aug VimAutoFormatOnWriting
-    au!
-    au BufWritePre *.clj,*.edn :%!bin/zprintm-1.1.2 '{:search-config? true}'
-  aug END
-endif
+"*************
+" ALE Settings
+"*************
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+let g:ale_fixers = {
+  \  'javascript': ['eslint'],
+  \  'typescript': ['eslint'],
+  \  'typescriptreact': ['eslint'],
+\}

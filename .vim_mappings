@@ -16,4 +16,5 @@ map <Leader>l   :set list<CR>
 map <Leader>nh  :noh<CR>
 map <Leader>nl  :set nolist<CR>
 map <Leader>q   :bp<bar>sp<bar>bn<bar>bd<CR>
-map <Leader>z   :execute ToggleZprint()<CR>'z
+map <Leader>z   :execute ZprintFormat()<CR>'z
+map <Leader>G   :ALEGoToDefinition<cr>
