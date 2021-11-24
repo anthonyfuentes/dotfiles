@@ -18,6 +18,8 @@
   editor = "vim"
 [merge]
   ff = only
+[pull]
+  ff = only
 [include]
   path = .gitconfig.local
 [commit]
