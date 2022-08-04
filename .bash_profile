@@ -22,11 +22,6 @@ if [ -f ~/.bash_plugins ]; then
     . ~/.bash_plugins
 fi
 
-# Source env vars
-if [ -f ~/.bash_env ]; then
-    . ~/.bash_env
-fi
-
 # Source functions
 if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
