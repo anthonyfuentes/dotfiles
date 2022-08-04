@@ -26,7 +26,7 @@
   template = ~/.gitmessage
 [user]
   name = Anthony Fuentes
-  email = afuentes@edenhealth.com
+  email = anthony.c.fuentes@gmail.com
 [diff]
     tool = Kaleidoscope
 [difftool "Kaleidoscope"]
