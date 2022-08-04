@@ -18,8 +18,6 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'guns/vim-sexp'
-Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 
 call vundle#end()
 filetype plugin indent on
