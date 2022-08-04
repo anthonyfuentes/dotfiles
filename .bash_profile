@@ -21,8 +21,3 @@ fi
 if [ -f ~/.bash_plugins ]; then
     . ~/.bash_plugins
 fi
-
-# Source functions
-if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
-fi
