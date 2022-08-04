@@ -1,6 +1,6 @@
-"***********************
+"**********************************
 "Delete trailing whitespace on save
-"***********************
+"**********************************
 function! s:RemoveTrailingWhitespaces()
   "Save last cursor position
   let l = line(".")
@@ -12,9 +12,9 @@ function! s:RemoveTrailingWhitespaces()
 endfunction
 au BufWritePre * :call <SID>RemoveTrailingWhitespaces()
 
-"***********************
+"************************
 "Toggle tabs / spaces F11
-"***********************
+"************************
 function! TabToggle()
   if &expandtab
     set shiftwidth=4

@@ -1,8 +1,8 @@
 set nocompatible
 
-"***********************
+"******
 "Vundle
-"***********************
+"******
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -24,15 +24,15 @@ Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 call vundle#end()
 filetype plugin indent on
 
-"***********************
+"****************
 "Airline settings
-"***********************
+"****************
 let g:airline_theme='lucius'
 set t_Co=256
 set laststatus=2
 
-"***********************
+"**************
 "Rainbow parens
-"***********************
+"**************
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
